@@ -1,0 +1,19 @@
+# Hugo
+/public/
+/resources/
+/themes/*/node_modules/
+/themes/*/resources/
+/themes/*/exampleSite/
+/themes/*/public/
+
+# Node.js
+/node_modules/
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# Editor/IDE specific files
+.idea/
