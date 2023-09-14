@@ -1,0 +1,27 @@
+{{ define "main" }}
+<h1>{{.Title}}</h1>
+{{ $totalImages := 0 }} 
+{{ with .Params.Images }} 
+{{ $totalImages = len . }} 
+{{ $totalImages = add $totalImages 1 }} 
+{{ end }}
+<p>Total Number of Images: {{ $totalImages }}</p>
+
+
+<br>
+{{ $coverImageget := resources.Get .Params.coverImage }} 
+{{ $coverImage := $coverImageget.Resize "320x" }}
+<img src="{{ $coverImage.RelPermalink | absURL }}" height="{{ $coverImage.Height }}" width="{{ $coverImage.Width }}" alt="" />
+
+
+<!-- Comment / Uncomment the Below code to test -->
+{{/*  {{ range .Params.images }} 
+{{ with $.Resources.GetMatch . }} 
+{{ with .Resize "500x webp q75" }}
+<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" />
+{{ end }} 
+{{ end }} 
+{{ end }}  */}}
+
+
+{{ end }}
